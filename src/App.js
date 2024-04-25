@@ -1,5 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Button from '@mui/material/Button';
+
+import ColumnGroupingTable from './components/table';
+import logo from './logo.svg';
 
 function App() {
   return (
@@ -9,6 +13,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Button variant="contained">Hello world</Button>
+        <ColumnGroupingTable></ColumnGroupingTable>
         <a
           className="App-link"
           href="https://reactjs.org"
