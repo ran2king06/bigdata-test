@@ -1,29 +1,21 @@
 import './App.css';
+import './assets/scss/main.scss';
 
-import Button from '@mui/material/Button';
-
-import ColumnGroupingTable from './components/table';
-import logo from './logo.svg';
+import HeaderComponents from './components/header';
+import SidebarComponents from './components/sidebar';
+import TableDummy from './components/tableDummy';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button variant="contained">Hello world</Button>
-        <ColumnGroupingTable></ColumnGroupingTable>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderComponents />
+      <SidebarComponents />
+
+      <div className="content">
+        <h1>Dashboard</h1>
+        <TableDummy />
+
+      </div>
     </div>
   );
 }
