@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'https://svc-dashboard-dummy-api-7ej42xs2pa-de.a.run.app/api',
+            target: `${process.env.REACT_APP_API_URL}`,
             changeOrigin: true,
         })
     );

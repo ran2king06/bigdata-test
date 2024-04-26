@@ -3,7 +3,8 @@ import './assets/scss/main.scss';
 
 import HeaderComponents from './components/header';
 import SidebarComponents from './components/sidebar';
-import TableDummy from './components/tableDummy';
+
+import TestPage from './pages/TestPage';
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
       <SidebarComponents />
 
       <div className="content">
-        <h1>Dashboard</h1>
-        <TableDummy />
-
+        <TestPage />
       </div>
     </div>
   );
