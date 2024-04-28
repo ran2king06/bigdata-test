@@ -1,19 +1,71 @@
-import * as React from 'react';
-import { BarChart } from '@mui/x-charts/BarChart';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
-export default function ChartsOverviewDemo() {
+export default function ChartsOverviewDemo(props) {
+  const [series, setSeries] = useState([{
+    name: 'Net Profit',
+    data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+  }, {
+    name: 'Revenue',
+    data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+  }, {
+    name: 'Free Cash Flow',
+    data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+  }]);
+  const [option, setOption] = useState({
+    options: {
+      chart: {
+        type: 'bar',
+        height: 350
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '55%',
+          endingShape: 'rounded'
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent']
+      },
+      xaxis: {
+        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+      },
+      yaxis: {
+        title: {
+          text: '$ (thousands)'
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return "$ " + val + " thousands"
+          }
+        }
+      }
+    },
+  });
+
+  useEffect(() => {
+
+  }, []);
+
+
   return (
-    <BarChart
-      series={[
-        { data: [35, 44, 24, 34] },
-        { data: [51, 6, 49, 30] },
-        { data: [15, 25, 30, 50] },
-        { data: [60, 50, 15, 25] },
-      ]}
-      height={290}
-      xAxis={[{ data: ['Q1', 'Q2', 'Q3', 'Q4'], scaleType: 'band' }]}
-      margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
-      {...{ tooltip: true }}
-    />
+    <>
+      <div id="chart">
+        <ReactApexChart options={option} series={series} type="bar" height={350} />
+      </div>
+      <div id="html-dist"></div>
+    </>
   );
 }

@@ -10,7 +10,8 @@ const api = axios.create({
 
 export const getDummyData = async (data) => {
     try {
-        const response = await api.post('/api/get-data', data);
+        // const response = await api.post('/api/get-data', data);
+        const response = await api.post('https://svc-dashboard-dummy-api-7ej42xs2pa-de.a.run.app/api/get-data', data);
         return response.data;
     } catch (error) {
         console.error(error);

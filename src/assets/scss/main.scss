@@ -1,3 +1,12 @@
+hr {
+    opacity: 0.5;
+}
+
+.off-icon {
+    height: 100%;
+    cursor: pointer;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -7,10 +16,29 @@ header {
     z-index: 1000;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
 
     img.logo {
         width: 100px;
         height: 60px;
+    }
+
+    .date-filter-box {
+        display: flex;
+        margin-right: 15px;
+        align-items: center;
+        height: 100%;
+
+        span {
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .react-daterange-picker__wrapper {
+            padding: 5px;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -18,18 +46,26 @@ header {
     position: fixed;
     top: 60px;
     left: 0;
-    width: 200px;
+    width: 224px;
     height: 100%;
     z-index: 999;
     background-color: #fff;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out;
+
+    &.hide {
+        left: -224px;
+    }
 
     ul {
         list-style: none;
-        
+        padding: 0;
+
         li {
             padding: 10px 20px;
             cursor: pointer;
+            background-color: rgba(233, 80, 118, 0.1);
+            color: #E95076;
 
             &:hover {
                 background-color: #f5f5f5;
@@ -39,7 +75,79 @@ header {
 }
 
 .content {
-    margin-left: 200px;
+    margin-left: 224px;
     margin-top: 60px;
     padding: 20px;
+    background-color: #f5f5f5;
+    transition: margin-left 0.3s ease-in-out;
+
+    .test-page {
+        background-color: #FFF;
+        padding: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        height: 100%;
+    }
+
+    &.full-width {
+        margin-left: 0;
+    }
+}
+
+.checker-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+
+    h2 {
+        width: 150px;
+    }
+
+    #checkboxes-tags-demo {
+        width: 100%;
+    }
+
+    .css-clttge-MuiAutocomplete-root {
+        width: 100%;
+    }
+
+    button {
+        width: 100px;
+        margin-left: 25px;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+}
+
+#chart {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    min-height: 200px;
+    align-items: center;
+}
+
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgb(0 0 0 / 30%);
+    border-radius: 50%;
+    border-top: 3px solid #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
