@@ -85,7 +85,7 @@ export default function StickyHeadTable(props) {
           </TableHead>
           <TableBody>
             {
-              rowsPerPage > 0
+              props.data.table_data && rowsPerPage > 0
                 ? props.data.table_data.slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage).map((row, index) => {
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={index}>
