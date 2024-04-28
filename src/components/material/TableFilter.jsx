@@ -29,6 +29,7 @@ export default function TableFilterComponents(props) {
     <div className="checker-container">
       <h2>案件分析</h2>
       <Autocomplete
+        style={{ width: '100%' }}
         multiple
         id="checkboxes-tags-demo"
         options={data}
